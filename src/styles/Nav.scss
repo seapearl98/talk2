@@ -1,0 +1,11 @@
+.tab-bar{
+    position: fixed; left: 0;bottom: 0;
+    width: 100%; height: 6.4%; min-width: 54px;
+    border-top: 1px solid #c1c1c1;
+    background: #f7f7f7;
+}
+.tab-bar>ul{display: flex; align-items: center; margin-top: 10px;}
+.tab-bar>ul>li{flex: 1;}
+.tab-bar>ul>li>a{display: flex; flex-direction: column; justify-content: center; align-items: center; color: #c0c1c2;}
+.tab-bar>ul>li>a>svg{display: block;  font-size: 22px;}
+.tab-bar>ul>li:hover{transform: scale(1.1);}

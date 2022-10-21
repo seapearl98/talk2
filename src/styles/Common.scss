@@ -1,0 +1,20 @@
+@import 'Reset.scss';
+@import 'Header.scss';
+@import 'Nav.scss';
+
+body{font-size: 12px;}
+a:link, a:visited{color: #000; text-decoration: none;}
+a:hover, a:focus, a:active{color: #000; text-decoration: none;}
+img{max-width: 100%;}
+
+.profile_img>img{border-radius: 50%; width: 50px; height:50px;}
+.empty{
+    position: relative;
+    display: block;
+    width: 40px; height: 40px;
+    margin: 10px 15px;
+    border-radius: 50%;
+    background: url(../img/empty.jpg) 0 0 no-repeat; background-size: cover;
+
+    
+}

@@ -1,0 +1,29 @@
+@import url(../styles/Common.scss);
+
+/* main_section */
+.main_section{
+    .header{height: 32px; line-height: 32px; 
+        padding-left: 15px; 
+        border: 1px solid #ebebeb; border-left: none; border-right: none; 
+        color: #b6b5b1;}
+    ul{display: flex;flex-direction: column; 
+        li{
+            a{display: flex; align-items: center; font-size: 16px;
+                .profile_img>img{margin: 0; border-radius: 50%; width: 50px; height:50px;}
+                .profile_name{flex: 1;}
+                .profile_messages{
+                    height: 30px; 
+                    line-height: 30px; 
+                    margin-right: 15px; 
+                    padding: 0 10px; 
+                    border-radius: 5px; 
+                    background: #f0f0f0; 
+                    font-size: 10px; 
+                    color: #8e9399;}
+            }
+        }
+    }
+}
+    
+
+    

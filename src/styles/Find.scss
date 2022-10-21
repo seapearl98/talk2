@@ -1,0 +1,48 @@
+@import url(Common.scss);
+
+.Header{
+    position: fixed; left: 0; top: 0;
+    background: #513736;
+    display: flex; flex-direction: column;
+    color: #fff;
+    padding: 0 15px;
+    box-sizing: border-box;
+    width: 100%; height: 64px;
+}
+.status-bar{
+    display: flex; flex-direction: row;
+    justify-content: space-between; align-items: center;
+    height: 37.5%;
+}
+.status-bar>div{flex: 1; border: 1px solid #ff0;}
+.status-bar>div:nth-child(2){text-align: center;}
+.status-bar>div:nth-child(3){text-align: right;}
+.status-bar>div>*{padding: 3px;}
+
+.title-bar{display: flex; flex-direction: row; justify-content: space-between; align-items: center; height: 62.5%;}
+.title-bar>*{flex: 1;}
+.title-bar>h1{order: 2; text-align: center;}
+.title-bar>h1>span{color: #f8ea65;}
+.title-bar>.left-item{order: 1; text-align: left;}
+.title-bar>.left-item>a{color: #fff; opacity: 0.5;}
+.title-bar>.right-item{order: 3; text-align: right; font-size: 20px;}
+.title-bar>.right-item>a{color: #fff;}
+
+.tab_bar>ul>li:nth-child(3)>a{color: #513736;}
+main{height: 85.8%; padding-top: 64px;}
+
+/* find method */
+main{
+    .find_method{
+        display: flex; align-items: center; height: 80px; background: #eee;
+        li{overflow: hidden; flex: 1;
+            a{display: flex; flex-direction: column; align-items: center; color: #513736; transition: transform 300ms linear 0s;
+                svg{font-size: 22px; margin: 5px 0;}
+            }
+            a:hover{transform: scale(1.05);}
+        }
+    }
+}
+/* recommend section */
+.recommend_section>header{height: 22px; line-height: 22px; text-indent: 15px; color: #8e9399;}
+.recommend_section>ul>li{height: 54px; line-height: 54px; border-top: 1px solid #ebebeb; border-bottom: 1px solid #ebebeb; text-align: center; color: #8e9399; font-size: 14px;}
