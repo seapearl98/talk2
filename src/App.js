@@ -25,7 +25,6 @@ function App() {
           <Route path='/profile' element={<Profile/>}/>
           <Route path='/chatting' element={<Chatting/>}/>
         </Routes>
-      <Main/>
       </BrowserRouter>
     </div>
   );

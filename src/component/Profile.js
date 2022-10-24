@@ -14,7 +14,7 @@ if(location.state === undefined){ //로케이션 스테이트값이 정의되지
   navigate('/'); //홈으로 이동. ->리다이렉트 기능
 }
 
-const {images,name,texts} = location.state; 
+const {images,name,texts,bgImg} = location.state; 
   return (
     <div className='chats'>
          <div className="Header">
@@ -41,6 +41,7 @@ const {images,name,texts} = location.state;
         </div>
         <main className='main_profile'>
             <section className="background">
+                <img src={bgImg} alt={bgImg}/>
                 <h2 className="blind">My profile background image</h2>
             </section>
             <section className="profile">

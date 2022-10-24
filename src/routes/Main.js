@@ -9,6 +9,7 @@ import Header from '../component/Header';
 import Nav from '../component/Nav';
 import figureimg from '../item/figureimg.json'
 import axios from 'axios';
+import BackgroundImg from '../component/BackgroundImg.json'
 
 export default function Main() {
 
@@ -78,6 +79,7 @@ export default function Main() {
                                 name={post.name}
                                 images={figureimg[index].img} 
                                 texts={texts[index].title.slice(0,30)}
+                                bgImg={BackgroundImg[index].img}
                                 />
                  
                  )).slice([1],[10])}

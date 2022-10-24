@@ -45,7 +45,7 @@ export default function Chatting() {
             {/* <!-- other --> */}
             <div class="chat_box other">
                 <div class="other_box">
-                    <a href="#"><span class="profile_img empty"><img src={images} alt={images} /></span></a>
+                    <Link to='/profile'><span class="profile_img empty"><img src={images} alt={images} /></span></Link>
                     <span class="profile_name">{name}</span>
                 </div>
                 <span class="chat">And this is an answer</span>
