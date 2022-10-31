@@ -10,7 +10,7 @@ import Text from './Text';
 function Info ({images,name,texts,bgImg}){
   return (
         <li>
-          <Link to={'/profile'} state={{images,name,texts,bgImg}}>
+          <Link to={'/Profile'} state={{images,name,texts,bgImg}}>
             <span class="profile_img empty"><img src={images} alt={images}/></span>
             <span class="profile_name">{name}</span>
             <span class="profile_messages">{texts}</span>

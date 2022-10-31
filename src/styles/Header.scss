@@ -12,7 +12,7 @@
     display: flex; flex-direction: row;
     justify-content: space-between; align-items: center;
     height: 37.5%; 
-        div{flex: 1; border: 1px solid #ff0;
+        div{flex: 1;
             *{padding: 3px;}
         }
         &:nth-child(2){text-align: center;}

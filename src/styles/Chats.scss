@@ -14,7 +14,7 @@
     justify-content: space-between; align-items: center;
     height: 37.5%;
 }
-.status-bar>div{flex: 1; border: 1px solid #ff0;}
+.status-bar>div{flex: 1;}
 .status-bar>div:nth-child(2){text-align: center;}
 .status-bar>div:nth-child(3){text-align: right;}
 .status-bar>div>*{padding: 3px;}

@@ -3,15 +3,15 @@
 import React, { useState, useEffect } from 'react'
 import '../styles/Main.scss'
 import { FaUser, FaComment,FaSearch, FaEllipsisH} from "react-icons/fa";
-import { Link } from 'react-router-dom';
 import Info from '../item/Info';
 import Header from '../component/Header';
 import Nav from '../component/Nav';
 import figureimg from '../item/figureimg.json'
 import axios from 'axios';
 import BackgroundImg from '../component/BackgroundImg.json'
+import { Link } from 'react-router-dom';
 
-export default function Main() {
+export default function Main({userObj}) {
 
     const [posts, setPosts] = useState([]);
     const url1 = "https://jsonplaceholder.typicode.com/users";
@@ -45,9 +45,8 @@ export default function Main() {
         getTexts();
     }, []);
 
-
   return (
-<div>
+<div>   
     <Header/>
     <main>
         <form className="search_box">
@@ -60,15 +59,14 @@ export default function Main() {
         <section className="main_section">
             <header className='header'><h2>My Profile</h2></header>
             <ul>
-            {posts.map((post,index)=>(
-                                <Info 
-                                key={post.id}
-                                name={post.name}
-                                images={figureimg[index].img} 
-                                texts={texts[index].title.slice(0,30)}
-                                />                 
-                                ))
-                                .slice([0],[1])}
+                <Link to='/myprofile'>
+                <li>
+                    <a href="profile.html">
+                        <span class="profile_img empty"></span>
+                        <span class="profile_name">My Name</span>
+                    </a>
+                </li>
+                </Link>
             </ul>
         </section>
         <section className="main_section">

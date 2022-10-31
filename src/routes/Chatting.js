@@ -1,15 +1,36 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import '../styles/Chatting.scss'
 import { FaPlane, FaWifi,FaMoon, FaBluetoothB, FaBatteryFull, FaCog, FaAngleLeft, FaSearch, FaBars, FaSmile, FaMicrophone, FaPlus } from "react-icons/fa";
 import { Link, useLocation } from 'react-router-dom';
 import ChattingList from '../item/ChattingList';
+import { collection, addDoc, query, getDoc, onSnapshot, orderBy, } from "firebase/firestore";
+import {db, storage} from "../fbase";
+import TweetFactory from './TweetFactory';
+import Tweet from './Tweet';
 
-export default function Chatting() {
-
+export default function Chatting({userObj}) {
+    console.log(userObj)
     const location = useLocation();
     console.log(location);
-    
     const {images,name,texts} = location.state; 
+    //-----------------------------------------------------------------
+    console.log(userObj)
+    const [tweets, setTweets] = useState([]); 
+
+    useEffect(()=>{ //실시간 데이터베이스 문서들 가져오기
+        // getTweets();
+        const q = query(collection(db, "tweets" ),
+                    orderBy("createAt","desc")); //시간을 내림차순정렬
+        const unsubscribe = onSnapshot(q, (querySnapshot) => {
+          const newArray = [];
+          querySnapshot.forEach((doc) => {
+            newArray.push({...doc.data(), id:doc.id});
+          })
+          console.log(newArray)
+          setTweets(newArray)
+        })
+      },[]);
+
   return (
     <div >
         <header className='header'>
@@ -37,10 +58,16 @@ export default function Chatting() {
         <main className='chatting'>
             <span className="date_info">Monday,Octover 17, 2022</span>
             <div className="chat_box my">
-                <span className="chat">Hello</span>
-                <span className="chat">Hello! This is a test message.</span>
-                <span className="chat">This is a test message.</span>
-                <span className="chat_time"><span>16</span>:<span>30</span></span>
+                <div>
+                <span><TweetFactory  userObj={userObj}/></span>
+                    {tweets.map(tweet => (
+                    <Tweet 
+                    key={tweet.id}
+                    tweetObj={tweet}
+                    isOwner={tweet.createId === userObj.uid}
+                    />
+                    ))}
+                </div>
             </div>
             {/* <!-- other --> */}
             <div class="chat_box other">
@@ -61,7 +88,6 @@ export default function Chatting() {
                 <fieldset className="text_box">
                     <legend className="blind">채팅 입력창</legend>
                     <label for="chatting" className="blind">채팅 입력</label>
-                    <input type="text"  id="chatting" className="text_field"/>
                     <span className="emoticon_btn"><a href="#"><FaSmile/></a></span>
                     <span className="voice_btn"><a href="#"><FaMicrophone/></a></span>
                 </fieldset>
