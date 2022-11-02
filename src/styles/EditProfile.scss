@@ -1,0 +1,51 @@
+.profileForm__newPhotoURL{
+    img{position: absolute; top: 0%;}
+}
+form{
+    .formInput{
+        position: absolute; 
+        top: 100%;
+        left: -50%;
+        transform: translateX(10%);
+        border: none;
+        border-bottom: 1px solid #000;
+        margin: 0;
+        padding: 10px 0;
+        text-align: center;
+    }
+    .formBtn{
+        position: absolute; 
+        top: 108%;
+        left: 105%;
+        border: none;   
+    }
+    .factoryInput__lable{
+        position: absolute;
+        left: 70%;
+        bottom: 0;
+        z-index: 100;
+        display: block;
+        background-color: #eee;
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        line-height: 32px;
+        font-size: 15px;
+        border-radius: 50%;
+        color: #513736;
+        cursor: pointer;
+    }
+    .profileForm__clear{
+        position: absolute;
+        top: 70%;
+        left: 102%;
+        background-color: #eee;
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        line-height: 28px;
+        font-size: 20px;
+        border-radius: 50%;
+        color: #513736;
+    }
+}

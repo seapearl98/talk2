@@ -1,0 +1,35 @@
+.Login{
+    background: #ffd43d;
+    .authContainer{
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        width: 56%;
+        margin: 0 auto;
+        .logo{
+            margin: 0 auto;
+            font-size: 180px;
+            color: #3A1D1D;
+            margin-top: 160px;
+            text-indent: 10px;
+        }
+        .authBtns{
+            display: inline-block;
+            width: 100%;
+            button{
+                width: 80%;
+                display: block;
+                margin: 0 auto;
+                padding: 8px 0;
+                border-radius: 30px;
+                border: 3px solid rgb(255, 235, 160);
+                margin-top: 10px;
+                background-color: #ffd43d;
+                font-family: Arial, Helvetica, sans-serif;
+                font-weight: 400;
+                letter-spacing: 1px;
+                font-size: 14px;
+            }
+        }
+    }
+}

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { authService } from './fbase';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import './styles/LoginForm.scss'
 
 export default function LoginForm() {
     

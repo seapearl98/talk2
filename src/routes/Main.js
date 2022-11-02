@@ -62,8 +62,12 @@ export default function Main({userObj}) {
                 <Link to='/myprofile'>
                 <li>
                     <a href="profile.html">
-                        <span class="profile_img empty"></span>
-                        <span class="profile_name">My Name</span>
+                        <div className="profile_img empty">
+                                    {userObj.photoURL && (
+                        <img src={userObj.photoURL} width='50' height='50' style={{borderRadius:50}}/>
+                        )}
+                        </div>
+                        <span class="profile_name"> {userObj.displayName ? `${userObj.displayName}` : "Profile"}</span>
                     </a>
                 </li>
                 </Link>

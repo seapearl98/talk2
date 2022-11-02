@@ -4,6 +4,8 @@ import LoginForm from './LoginForm';
 import { authService } from './fbase';
 import { GoogleAuthProvider,GithubAuthProvider,signInWithPopup } from "firebase/auth";
 import { FaComment } from 'react-icons/fa';
+import { IconName, RiKakaoTalkFill } from "react-icons/ri";
+import './styles/Login.scss'
 
 export default function Login() {
 
@@ -21,15 +23,15 @@ export default function Login() {
       }
 
   return (
-    <div>
+    <div className='Login'>
         <div className='authContainer'>
-            <FaComment/>
+            <span className='logo'><RiKakaoTalkFill/></span>
             <LoginForm/>
             <div className='authBtns'>
                 <button onClick={onSocialClick} name="google">
-                Continue with Google<FontAwesomeIcon icon="fa-brands fa-google" /></button>
+                Continue with Google <FontAwesomeIcon icon="fa-brands fa-google" /></button>
                 <button onClick={onSocialClick} name="github">
-                Continue with Github<FontAwesomeIcon icon="fa-brands fa-github" /></button>
+                Continue with Github <FontAwesomeIcon icon="fa-brands fa-github" /></button>
             </div>
         </div>
     </div>

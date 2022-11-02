@@ -2,9 +2,19 @@ import React from 'react'
 import '../styles/More.scss'
 import { FaUser, FaPlane, FaWifi, FaMoon, FaBluetoothB, FaBatteryFull, FaCog, FaComment,FaSearch, FaEllipsisH, FaAddressBook, FaQrcode, FaMobileAlt, FaEnvelope, FaCommentAlt, FaCommentSlash, FaComments, FaSmile, FaPaintBrush, FaHandPeace, FaUserCircle, FaInfoCircle, FaUtensilSpoon, FaUtensils, FaHome, FaTv, FaPencilAlt, FaGraduationCap, FaUniregistry, FaUniversity, FaWonSign, FaVideo, FaRegSmile, FaSmileBeam, FaSmileWink, FaRegHandPeace, FaRegUserCircle} from "react-icons/fa";
 import Nav from '../component/Nav';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { authService } from '../fbase';
 
-export default function More() {
+export default function More({userObj}) {
+
+    const navigate = useNavigate();
+
+    const onLogOutClick = () => {
+        authService.signOut();
+        navigate("/"); // 홈으로 이동
+      }
+
   return (
     <>
       <div className="Header">
@@ -33,9 +43,13 @@ export default function More() {
     {/* <!-- user info --> */}
     <section className="user_info">
         <h2 className="blind">사용자 정보</h2>
-        <span className="profile_img empty"></span>
+        <div className="profile_img empty">
+                        {userObj.photoURL && (
+                        <img src={userObj.photoURL} width='50' height='50' style={{borderRadius:50}}/>
+                        )}
+                        </div>
         <span className="profile_info">
-            <span className="profile_name">My Name <Link to='/logout'><FaCog/></Link></span>
+            <span className="profile_name"> {userObj.displayName ? `${userObj.displayName}` : "Profile"} <FontAwesomeIcon icon="fa-solid fa-xmark" onClick={onLogOutClick}/></span>
             <span className="profile_email">Userid@gmail.com</span>
         </span>
         <span className="chat_img"><a href="#"><FaComments/></a></span>
