@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/talk2/static/css/main.728935a2.css",
+    "main.js": "/talk2/static/js/main.00aedd33.js",
+    "static/media/kakaofriends.png": "/talk2/static/media/kakaofriends.84375bb9f89d79ccd760.png",
+    "static/media/path.png": "/talk2/static/media/path.7d00edf73f07bdcecc6d.png",
+    "static/media/kakaostory.png": "/talk2/static/media/kakaostory.572f3ce5bf10fbdaac9d.png",
+    "static/media/bg_default.png": "/talk2/static/media/bg_default.82687b4e75ad8b89fa96.png",
+    "index.html": "/talk2/index.html",
+    "main.728935a2.css.map": "/talk2/static/css/main.728935a2.css.map",
+    "main.00aedd33.js.map": "/talk2/static/js/main.00aedd33.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.728935a2.css",
+    "static/js/main.00aedd33.js"
+  ]
+}
